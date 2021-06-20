@@ -1,3 +1,34 @@
+# Project Name
+
+**Author**: Humam Mkhzoumi , Haneen Bader
+**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+
+## Overview
+<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+## Getting Started
+click on login button, then login via google .
+
+## Architecture
+react , js
+
+## Change Log
+20-06-2021 6:00pm - Application now has a fully-functional login authenticate.
+
+## Credit and Collaborations
+humam mkhzoumi: https://github.com/Mkhzoumi
+haneen bader: https://github.com/haneenbader
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
