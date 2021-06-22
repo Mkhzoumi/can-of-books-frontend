@@ -3,8 +3,7 @@ import { withAuth0 } from "@auth0/auth0-react";
 import axios from 'axios';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import AddBookButton from './Components/AddBookButton';
 class BestBooks extends React.Component {
     constructor(props) {
         super(props);
@@ -27,14 +26,23 @@ class BestBooks extends React.Component {
         );
     }
 
+    newBooks= (newBooksData)=>{
+        this.setState({
+            booksData : newBooksData
+        })
+    }
+
 
     render() {
         return (
             <>
+            <AddBookButton
+            newBooks={this.newBooks}
+            />
                 {this.state.booksStatus &&
                     <Carousel>
 
-                    {this.state.booksData[0].Books.map(value => {
+                    {this.state.booksData.Books.map(value => {
                         return (
 
                             
@@ -54,7 +62,7 @@ class BestBooks extends React.Component {
                         )
                     })}
                     </Carousel>
-                }
+    }
             </>
         )
     }
