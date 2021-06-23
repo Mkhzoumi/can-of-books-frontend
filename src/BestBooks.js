@@ -4,6 +4,8 @@ import axios from 'axios';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddBookButton from './Components/AddBookButton';
+import DeleteButton from './Components/DeleteBook';
+
 class BestBooks extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +14,13 @@ class BestBooks extends React.Component {
             booksStatus: false
         }
     }
+ 
+    booksDataAfterDelet  = (newDataAfterDelet)=> {
+    this.setState ({
+    booksData : newDataAfterDelet 
+})
 
+    }
     componentDidMount = async () => {
         await axios.get(`${process.env.REACT_APP_SERVER}/books?email=${this.props.auth0.user.email}`).then(response => {
             this.setState({
@@ -42,7 +50,7 @@ class BestBooks extends React.Component {
                 {this.state.booksStatus &&
                     <Carousel>
 
-                    {this.state.booksData.Books.map(value => {
+                    {this.state.booksData.Books.map((value,index) => {
                         return (
 
                             
@@ -56,7 +64,13 @@ class BestBooks extends React.Component {
                                         <h1>{value.name}</h1>
                                         <p>{value.description}</p>
                                         <p>{value.status}</p>
+                                        <DeleteButton 
+                                        BookIndex = {index}
+                                        booksDataAfterDelet ={this.booksDataAfterDelet}
+                                        />
                                     </Carousel.Caption>
+
+                                  
                                 </Carousel.Item>
                             
                         )
