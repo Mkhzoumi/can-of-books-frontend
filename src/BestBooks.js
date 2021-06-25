@@ -53,7 +53,7 @@ class BestBooks extends React.Component {
                     <AddBookButton
                         newBooks={this.newBooks}
                     />
-                    {this.state.booksStatus && this.state.booksData.length !==0 && 
+                    {this.state.booksStatus && this.state.booksData  && 
                         <Carousel>
 
                             {this.state.booksData.Books.map((value, index) => {
